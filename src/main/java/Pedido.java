@@ -34,6 +34,8 @@ public class Pedido {
 
     public void registrarPedido() {
         // fazer registro dos pedidos
+        System.out.println("Pedido registrado em: " + dataPedido);
+        System.out.println("Total do pedido: " + valorTotal);
     }
 
     public void aplicarDesconto(double percentualDesconto) {
@@ -41,5 +43,18 @@ public class Pedido {
             item.aplicarDesconto(percentualDesconto);
         }
         calcularValorTotal();
+    }
+
+    public Date getDataPedido() {
+        return dataPedido;
+    }
+    public void setDataPedido(Date dataPedido) {
+        this.dataPedido = dataPedido;
+    }
+    public double getValorTotal() {
+        return valorTotal;
+    }
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }

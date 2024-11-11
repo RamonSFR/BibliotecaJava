@@ -50,4 +50,12 @@ public class Sistema {
     private boolean validarPedido(Pedido pedido) {
         return true;
     }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
 }

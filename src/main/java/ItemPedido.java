@@ -22,7 +22,12 @@ public class ItemPedido {
     }
 
     public int getQuantidade() {
-        return quantidade;
+        if (quantidade > 0) {
+            this.quantidade = quantidade;
+            calcularValorTotal();
+        } else {
+            System.out.println("Erro");
+        }
     }
 
     public double getValorTotal() {
