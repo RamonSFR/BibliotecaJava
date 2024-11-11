@@ -9,7 +9,7 @@ public class Pedido {
         List<ItemPedido> itens = new ArrayList<>();
         Date dataPedido = new Date();
         double valorTotal = 0.0;
-        this.status = "Pendente"; // Status inicial
+        this.status = "Pendente";
     }
 
     public void setStatus(String status) {

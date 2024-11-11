@@ -8,7 +8,7 @@ public class ItemPedido {
 
     public ItemPedido(Livro livro, int quantidade) {
         this.livro = livro;
-        setQuantidade(quantidade);  // Validação no setter
+        setQuantidade(quantidade);
         this.dataPedido = new Date();
         calcularValorTotal();
     }
