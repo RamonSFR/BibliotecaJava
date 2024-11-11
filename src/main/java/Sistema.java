@@ -7,55 +7,21 @@ public class Sistema {
     private List<Livro> livros;
     private List<Funcionario> funcionarios;
 
-    public Sistema() {
-        this.clientes = new ArrayList<>();
-        this.pedidos = new ArrayList<>();
-        this.livros = new ArrayList<>();
-        this.funcionarios = new ArrayList<>();
-    }
-
-    public void adicionarCliente(Cliente cliente) {
-        clientes.add(cliente);
-    }
-
-    public void adicionarLivro(Livro livro) {
-        livros.add(livro);
-    }
-
-    public Livro consultarLivro(String titulo) {
-        for (Livro livro : livros) {
-            if (livro.consultarInformacoes().contains(titulo)) {
-                return livro;
+    public Cliente buscarClientePorNome(String nome) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getNome().equalsIgnoreCase(nome)) {
+                return cliente;
             }
         }
+        System.out.println("Cliente não encontrado.");
         return null;
     }
 
-    public void processarPedido(Pedido pedido) {
-        pedidos.add(pedido);
-    }
-
-    public void removerPedido(Pedido pedido) {
-        pedidos.remove(pedido);
-    }
-
-    public List<Pedido> consultarPedidosCliente(Cliente cliente) {
-        return pedidos;
-    }
-
-    public List<Livro> listarLivros() {
-        return livros;
-    }
-
-    private boolean validarPedido(Pedido pedido) {
-        return true;
-    }
-
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
+    public List<Pedido> listarPedidosPorCliente(Cliente cliente) {
+        List<Pedido> pedidosDoCliente = new ArrayList<>();
+        for (Pedido pedido : pedidos) {
+            pedidosDoCliente.add(pedido);
+        }
+        return pedidosDoCliente;
     }
 }

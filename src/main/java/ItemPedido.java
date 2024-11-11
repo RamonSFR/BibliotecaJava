@@ -8,7 +8,7 @@ public class ItemPedido {
 
     public ItemPedido(Livro livro, int quantidade) {
         this.livro = livro;
-        this.quantidade = quantidade;
+        setQuantidade(quantidade);  // Validação no setter
         this.dataPedido = new Date();
         calcularValorTotal();
     }
@@ -22,11 +22,16 @@ public class ItemPedido {
     }
 
     public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
         if (quantidade > 0) {
             this.quantidade = quantidade;
             calcularValorTotal();
         } else {
-            System.out.println("Erro");
+            System.out.println("Quantidade inválida! Definindo para 1.");
+            this.quantidade = 1;
         }
     }
 
